@@ -1,0 +1,485 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="top"
+    tools:context=".MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:elevation="30dp"
+        app:cardCornerRadius="20dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="5dp"
+        app:contentPadding="10dp">
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:background="@null"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:minWidth="36dp"
+                    android:minHeight="36dp"
+                    android:src="@drawable/power_selector">
+
+                </ImageButton>
+
+                <LinearLayout
+                    android:id="@+id/device_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/device_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/Device_Name"
+                        android:textColor="@color/teal_700"
+                        android:textSize="25sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <LinearLayout
+                        android:id="@+id/Running_Status"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Status"
+                            android:textSize="11sp"
+                            android:textStyle="bold">
+
+
+                        </TextView>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity=""
+                    android:orientation="vertical">
+
+
+                    <androidx.appcompat.widget.SwitchCompat
+
+                        android:id="@+id/switch_room_availability"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:textOff="Taken"
+                        android:textOn="Available"
+                        android:thumb="@drawable/led_switch_thumb"
+                        app:switchMinWidth="100dp"
+                        app:track="@drawable/led_switch_track" />
+
+                    <TextView
+                        android:id="@+id/tv_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:paddingStart="12dp"
+                        android:text="available"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_text_taken"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingEnd="23dp"
+                        android:text="Taken"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:visibility="gone" />                 >
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/full_control"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/control"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:orientation="vertical">
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <com.marcinmoskala.arcseekbar.ArcSeekBar
+                                android:id="@+id/gradientSeekBar"
+                                android:layout_width="160dp"
+                                android:layout_height="120dp"
+                                android:foregroundGravity="center"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.0"
+                                app:maxProgress="7"
+                                app:progress="1"
+                                app:progressWidth="20dp"
+                                app:roundEdges="true" />
+
+                            <TextView
+                                android:id="@+id/status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="30sp"
+                                android:textStyle="italic"
+                                app:layout_constraintBottom_toBottomOf="@+id/gradientSeekBar"
+                                app:layout_constraintEnd_toEndOf="@+id/gradientSeekBar"
+                                app:layout_constraintStart_toStartOf="@+id/gradientSeekBar"
+                                app:layout_constraintTop_toTopOf="@+id/gradientSeekBar"
+                                app:layout_constraintVertical_bias="0.662" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="33dp"
+                            android:layout_gravity="center"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginHorizontal="0dp"
+                            android:layout_marginVertical="0dp"
+                            android:background="@drawable/bg_switch"
+                            android:padding="2.5dp">
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/switchOnOff"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:gravity="center"
+                                android:checked="true"
+                                android:textColor="@color/white"
+                                android:thumb="@drawable/thumb_selector"
+                                app:switchMinWidth="140dp"
+                                app:track="@drawable/track_selector" />
+
+                            <LinearLayout
+                                android:id="@+id/Dir_layout"
+                                android:layout_width="140dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/tvSwitchYes"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Forward"
+                                    android:textColor="@color/teal_200"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tvSwitchNo"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Reverse"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="33dp"
+                            android:layout_gravity="center"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginHorizontal="5dp"
+                            android:layout_marginVertical="5dp"
+                            android:background="@drawable/bg_switch"
+                            android:padding="2.5dp">
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/SmartOnOff"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:checked="true"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:thumb="@drawable/thumb_selector"
+                                app:switchMinWidth="140dp"
+                                app:track="@drawable/track_selector" />
+
+                            <LinearLayout
+                                android:layout_width="140dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/tvSmartNO"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Smart Off"
+                                    android:textColor="@color/teal_200"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tvSmartYes"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Smart On"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="match_parent"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Set Timer" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="0dp"
+                            android:elevation="30dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardUseCompatPadding="true"
+                            app:cardElevation="5dp"
+                            app:contentPadding="10dp">
+
+
+
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <NumberPicker
+                                        android:id="@+id/hours"
+                                        android:layout_width="40dp"
+                                        android:layout_height="100dp"
+                                        android:layout_gravity="center"
+                                        android:scaleX="0.8"
+                                        android:scaleY="0.8">
+
+                                    </NumberPicker>
+                                    <View
+                                        android:layout_width="2dp"
+                                        android:layout_gravity="center"
+                                        android:layout_height="100dp"
+                                        android:background="@color/teal_700" />
+
+                                    <NumberPicker
+                                        android:id="@+id/minutes"
+                                        android:layout_width="40dp"
+                                        android:layout_height="100dp"
+                                        android:layout_gravity="center"
+                                        android:scaleX="0.8"
+                                        android:scaleY="0.8">
+
+                                    </NumberPicker>
+                                    <View
+                                        android:layout_width="2dp"
+                                        android:layout_gravity="center"
+                                        android:layout_height="100dp"
+                                        android:background="@color/teal_700" />
+
+                                    <NumberPicker
+                                        android:id="@+id/seconds"
+                                        android:layout_width="40dp"
+                                        android:layout_height="100dp"
+                                        android:layout_gravity="center"
+                                        android:scaleX="0.8"
+                                        android:scaleY="0.8"/>
+
+
+                                </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="left"
+                                    android:textSize="10sp"
+                                    android:text="Timer Remaining"/>
+                                <TextView
+                                    android:id="@+id/TimerTimeLeft"
+                                    android:textSize="10sp"
+                                    android:layout_gravity="left"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="12:10:05">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+
+
+
+
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/led_settings"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_selector"
+                        android:elevation="10dp"
+                        android:text="LED"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/Advanced_Menu"
+                        android:layout_margin="5dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_selector"
+
+                        android:elevation="10dp"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/white"
+                        android:text="Advanced"/>
+
+                    <Button
+                        android:id="@+id/timer"
+                        android:layout_margin="5dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_selector"
+
+                        android:elevation="10dp"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/white"
+                        android:text="Set Timer" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

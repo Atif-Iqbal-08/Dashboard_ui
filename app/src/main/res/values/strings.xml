@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">emflux</string>
+    <string name="turbo">Turbo</string>
+    <string-array name="time">
+        <item>AM</item>
+        <item>PM</item>
+    </string-array>
+    <string name="Device_Name">Living Room</string>
+    <string name="Serial_Number">Be403567289</string>
+    <string name="Device_Id">A2–AD–D3–A4-54-EF</string>
+    <string-array name="Running_Status">
+        <item>Fan Off</item>
+        <item>Fan running speed 1</item>
+        <item>Fan running speed 2</item>
+        <item>Fan running speed 3</item>
+        <item>Fan running speed 4</item>
+        <item>Fan running speed 5</item>
+        <item>Fan running speed 6</item>
+        <item>Fan running Turbo Speed</item>
+        <item>Fan running Smart Mode</item>
+        <item>Fan running Reverse Mode</item>
+
+    </string-array>
+
+
+</resources>
