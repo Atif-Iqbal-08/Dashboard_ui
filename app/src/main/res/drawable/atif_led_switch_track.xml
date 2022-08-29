@@ -6,15 +6,23 @@
             android:useLevel="false" android:visible="true">
             <solid android:color="@color/teal_200" />
             <corners android:radius="10dp" />
-            <size android:width="100dp" android:height="40dp" />
+            <size android:width="40dp" android:height="20dp" />
+
+
+
         </shape>
     </item>
     <item android:state_checked="false">
         <shape android:dither="true" android:shape="rectangle"
             android:useLevel="false" android:visible="true" >
-            <corners android:radius="20dp" />
-            <size android:width="100dp" android:height="40dp" />
-            <solid android:color="@color/teal_700" />
+            <corners android:radius="10dp" />
+            <size android:width="40dp" android:height="20dp" />
+            <solid android:color="#00403F" />
+
+
+
+
+
 
         </shape>
     </item>

@@ -10,15 +10,31 @@
     <string name="Device_Id">A2–AD–D3–A4-54-EF</string>
     <string-array name="Running_Status">
         <item>Fan Off</item>
-        <item>Fan running speed 1</item>
-        <item>Fan running speed 2</item>
-        <item>Fan running speed 3</item>
-        <item>Fan running speed 4</item>
-        <item>Fan running speed 5</item>
-        <item>Fan running speed 6</item>
-        <item>Fan running Turbo Speed</item>
-        <item>Fan running Smart Mode</item>
-        <item>Fan running Reverse Mode</item>
+        <item>Running at speed 1</item>
+        <item>Running at speed 2</item>
+        <item>Running at speed 3</item>
+        <item>Running at speed 4</item>
+        <item>Running at speed 5</item>
+        <item>Running at speed 6</item>
+        <item>Running at Turbo Speed</item>
+        <item>Smart Mode Active</item>
+        <item>Reverse Mode Active</item>
+        <item> LED Off</item>
+        <item> LED On</item>
+        <item>Timer is On</item>
+    </string-array>
+    <string-array name="Seeker_Status">
+        <item>Off</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>Turbo</item>
+        <item>Forward</item>
+        <item>Reverse</item>
+        <item>Smart</item>
 
     </string-array>
 
