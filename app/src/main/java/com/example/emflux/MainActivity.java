@@ -172,67 +172,69 @@ public class MainActivity extends Activity {
 
     }
     public void status() {
-        gradientSeekBar.setOnProgressChangedListener(new ProgressListener() {
-            @Override
-            public void invoke(int progress) {
-                Log.d("Value", "" +progress) ;
-                heading_status.setText(Running_Status[progress]);
-                status.setText(Seeker_status[progress]);
-            }
 
 
 
-        });
-        DirFwdRev.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // TODO Auto-generated method stub
-                if (buttonView.isChecked()){
-                    Forward.setTextColor(Color.parseColor("#FF03DAC5"));
-                    Reverse.setTextColor(Color.parseColor("#FFFFFFFF"));
-                    direction_text_status.setText(Seeker_status[9]);
-                    heading_status.setText(Running_Status[9]);
-                    SmartSwitch.setChecked(false);
-                    //do something
+
+            gradientSeekBar.setOnProgressChangedListener(new ProgressListener() {
+                @Override
+                public void invoke(int progress) {
+                    Log.d("Value", "" + progress);
+                    heading_status.setText(Running_Status[progress]);
+                    status.setText(Seeker_status[progress]);
                 }
 
-                else {
-                    Forward.setTextColor(Color.parseColor("#FFFFFFFF"));
-                    Reverse.setTextColor(Color.parseColor("#FF03DAC5"));
-                    direction_text_status.setText(Seeker_status[8]);
 
-                    //do something
+            });
+            DirFwdRev.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    // TODO Auto-generated method stub
+                    if (buttonView.isChecked()) {
+                        Forward.setTextColor(Color.parseColor("#FF03DAC5"));
+                        Reverse.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        direction_text_status.setText(Seeker_status[9]);
+                        heading_status.setText(Running_Status[9]);
+                        SmartSwitch.setChecked(false);
+                        //do something
+                    } else {
+                        Forward.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        Reverse.setTextColor(Color.parseColor("#FF03DAC5"));
+                        direction_text_status.setText(Seeker_status[8]);
 
+                        //do something
+
+                    }
                 }
-            }
-        });
-        SmartSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // TODO Auto-generated method stub
-                if (buttonView.isChecked()){
-                    SmartOff.setTextColor(Color.parseColor("#FF03DAC5"));
-                    SmartOn.setTextColor(Color.parseColor("#FFFFFFFF"));
-                    heading_status.setText(Running_Status[8]);
-                    DirFwdRev.setChecked(false);
-                    status.setText((Seeker_status[10]));
+            });
+            SmartSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    // TODO Auto-generated method stub
+                    if (buttonView.isChecked()) {
+                        SmartOff.setTextColor(Color.parseColor("#FF03DAC5"));
+                        SmartOn.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        heading_status.setText(Running_Status[8]);
+                        DirFwdRev.setChecked(false);
+                        status.setText((Seeker_status[10]));
 
-                    //do something
+                        //do something
+                    } else {
+                        SmartOff.setTextColor(Color.parseColor("#FFFFFFFF"));
+                        SmartOn.setTextColor(Color.parseColor("#FF03DAC5"));
+
+                        //do something
+
+                    }
                 }
+            });
 
-                else {
-                    SmartOff.setTextColor(Color.parseColor("#FFFFFFFF"));
-                    SmartOn.setTextColor(Color.parseColor("#FF03DAC5"));
 
-                    //do something
 
-                }
-            }
-        });
 
-        power_toggle.setOnClickListener(view ->{
 
-        });
+
+
 
 
 
